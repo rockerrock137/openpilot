@@ -437,6 +437,62 @@ location set</source>
     </message>
 </context>
 <context>
+    <name>OffroadAlert</name>
+    <message>
+        <source>Device temperature too high. System won&apos;t start.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Immediately connect to the internet to check for updates. If you do not connect to the internet, openpilot won&apos;t engage in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect to internet to check for updates. openpilot won&apos;t automatically start until it connects to internet to check for updates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to download updates
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid date and time settings, system won&apos;t start. Connect to internet to set time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Taking camera snapshots. System won&apos;t start until finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An update to your device&apos;s operating system is downloading in the background. You will be prompted to update when it&apos;s ready to install.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device failed to register. It will not connect to or upload to comma.ai servers, and receives no support from comma.ai. If this is an official device, visit https://comma.ai/support.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NVMe drive not mounted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsupported NVMe drive detected. Device may draw significantly more power and overheat due to the unsupported NVMe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>openpilot was unable to identify your car. Your car is either unsupported or its ECUs are not recognized. Please submit a pull request to add the firmware versions to the proper vehicle. Need help? Join discord.comma.ai.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>openpilot was unable to identify your car. Check integrity of cables and ensure all connections are secure, particularly that the comma power is fully inserted in the OBD-II port of the vehicle. Need help? Join discord.comma.ai.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>openpilot detected a change in the device&apos;s mounting position. Ensure the device is fully seated in the mount and the mount is firmly secured to the windshield.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OffroadHome</name>
     <message>
         <source>UPDATE</source>
@@ -517,14 +573,6 @@ location set</source>
     <message>
         <source>comma prime</source>
         <translation>comma 高級會員</translation>
-    </message>
-    <message>
-        <source>CONNECT.COMMA.AI</source>
-        <translation>CONNECT.COMMA.AI</translation>
-    </message>
-    <message>
-        <source>COMMA POINTS</source>
-        <translation>COMMA 積分</translation>
     </message>
 </context>
 <context>
@@ -862,6 +910,26 @@ This may take up to a minute.</source>
         <source>Uninstall</source>
         <translation>解除安裝</translation>
     </message>
+    <message>
+        <source>failed to check for update</source>
+        <translation>檢查更新失敗</translation>
+    </message>
+    <message>
+        <source>up to date, last checked %1</source>
+        <translation>已經是最新版本，上次檢查時間為 %1</translation>
+    </message>
+    <message>
+        <source>DOWNLOAD</source>
+        <translation>下載</translation>
+    </message>
+    <message>
+        <source>update available</source>
+        <translation>有可用的更新</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未更新</translation>
+    </message>
 </context>
 <context>
     <name>SshControl</name>
@@ -1019,23 +1087,43 @@ This may take up to a minute.</source>
         <translation>未來可能會推出openpilot縱向控制</translation>
     </message>
     <message>
-        <source>An experimental version of openpilot longitudinal control can be tested, along with Experimental mode, on non-release branches.</source>
-        <translation>在非發行分支中 可找到包含實驗模式的openpilot縱向控制測試版本</translation>
-    </message>
-    <message>
         <source>Enable experimental longitudinal control to allow Experimental mode.</source>
         <translation>啟用實驗性縱向控制以使用實驗模式。</translation>
     </message>
     <message>
         <source>openpilot Longitudinal Control (Alpha)</source>
-        <translation type="unfinished"></translation>
+        <translation>openpilot 縱向控制 (Alpha 版)</translation>
     </message>
     <message>
         <source>WARNING: openpilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB).</source>
-        <translation type="unfinished"></translation>
+        <translation>警告：此車輛的 Openpilot 縱向控制功能目前處於 Alpha 版本，使用此功能將會停用自動緊急制動（AEB）功能。</translation>
     </message>
     <message>
         <source>On this car, openpilot defaults to the car&apos;s built-in ACC instead of openpilot&apos;s longitudinal control. Enable this to switch to openpilot longitudinal control. Enabling Experimental mode is recommended when enabling openpilot longitudinal control alpha.</source>
+        <translation>在這輛車上，Openpilot 預設使用車輛內建的主動巡航控制（ACC），而非 Openpilot 的縱向控制。啟用此項功能可切換至 Openpilot 的縱向控制。當啟用 Openpilot 縱向控制 Alpha 版本時，建議同時啟用實驗性模式（Experimental mode）。</translation>
+    </message>
+    <message>
+        <source>Aggressive</source>
+        <translation>積極</translation>
+    </message>
+    <message>
+        <source>Standard</source>
+        <translation>標準</translation>
+    </message>
+    <message>
+        <source>Relaxed</source>
+        <translation>舒適</translation>
+    </message>
+    <message>
+        <source>Driving Personality</source>
+        <translation>駕駛風格</translation>
+    </message>
+    <message>
+        <source>Standard is recommended. In aggressive mode, openpilot will follow lead cars closer and be more aggressive with the gas and brake. In relaxed mode openpilot will stay further away from lead cars.</source>
+        <translation>推薦使用標準模式。在積極模式中，openpilot 會更靠近前車並在加速和剎車方面更積極。在舒適模式中，openpilot 會與前車保持較遠的距離。</translation>
+    </message>
+    <message>
+        <source>An alpha version of openpilot longitudinal control can be tested, along with Experimental mode, on non-release branches.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1072,6 +1160,29 @@ This may take up to a minute.</source>
     <message>
         <source>Update failed</source>
         <translation>更新失敗</translation>
+    </message>
+</context>
+<context>
+    <name>WiFiPromptWidget</name>
+    <message>
+        <source>Setup Wi-Fi</source>
+        <translation>設置 Wi-Fi 連接</translation>
+    </message>
+    <message>
+        <source>Connect to Wi-Fi to upload driving data and help improve openpilot</source>
+        <translation>請連接至 Wi-Fi 以上傳駕駛數據，並協助改進 openpilot。</translation>
+    </message>
+    <message>
+        <source>Open Settings</source>
+        <translation>開啟設置</translation>
+    </message>
+    <message>
+        <source>Uploading training data</source>
+        <translation>正在上傳訓練數據</translation>
+    </message>
+    <message>
+        <source>Your data is used to train driving models and help improve openpilot</source>
+        <translation>您的數據將用於訓練駕駛模型並協助改進 openpilot</translation>
     </message>
 </context>
 <context>

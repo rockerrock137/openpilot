@@ -95,7 +95,7 @@ void OnroadWindow::offroadTransition(bool offroad) {
 
       QObject::connect(uiState(), &UIState::offroadTransition, m, &MapWindow::offroadTransition);
 
-      m->setFixedWidth(topWidget(this)->width() / 2);
+      m->setFixedWidth(topWidget(this)->width() / 2 - bdr_s);
       split->insertWidget(0, m);
 
       // Make map visible after adding to split
@@ -281,14 +281,12 @@ void AnnotatedCameraWidget::updateState(const UIState &s) {
   // update engageability/experimental mode button
   experimental_btn->updateState(s);
 
-  // update DM icons at 2Hz
-  if (sm.frame % (UI_FREQ / 2) == 0) {
-    setProperty("dmActive", sm["driverMonitoringState"].getDriverMonitoringState().getIsActiveMode());
-    setProperty("rightHandDM", sm["driverMonitoringState"].getDriverMonitoringState().getIsRHD());
-  }
-
+  // update DM icon
+  auto dm_state = sm["driverMonitoringState"].getDriverMonitoringState();
+  setProperty("dmActive", dm_state.getIsActiveMode());
+  setProperty("rightHandDM", dm_state.getIsRHD());
   // DM icon transition
-  dm_fade_state = fmax(0.0, fmin(1.0, dm_fade_state+0.2*(0.5-(float)(dmActive))));
+  dm_fade_state = std::clamp(dm_fade_state+0.2*(0.5-dmActive), 0.0, 1.0);
 }
 
 void AnnotatedCameraWidget::drawHud(QPainter &p) {
@@ -558,8 +556,9 @@ void AnnotatedCameraWidget::drawDriverState(QPainter &painter, const UIState *s)
   painter.save();
 
   // base icon
-  int x = rightHandDM ? rect().right() -  (btn_size - 24) / 2 - (bdr_s * 2) : (btn_size - 24) / 2 + (bdr_s * 2);
-  int y = rect().bottom() - footer_h / 2;
+  int offset = bdr_s + btn_size / 2;
+  int x = rightHandDM ? width() - offset : offset;
+  int y = height() - offset;
   float opacity = dmActive ? 0.65 : 0.2;
   drawIcon(painter, x, y, dm_img, blackColor(70), opacity);
 
